@@ -177,6 +177,7 @@ export default class SlideNav extends Slide {
     return control;
   }
 
+
   eventControl(item, index) {
     item.addEventListener('click', (event) => {
       event.preventDefault();
