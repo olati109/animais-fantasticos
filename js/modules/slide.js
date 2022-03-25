@@ -68,7 +68,6 @@ export class Slide {
     this.wrapper.addEventListener('touchend', this.onEnd);
   }
 
-
   // Slides config
 
   slidePosition(slide) {
@@ -130,13 +129,11 @@ export class Slide {
     this.onMove = this.onMove.bind(this);
     this.onEnd = this.onEnd.bind(this);
 
-
     this.activePrevSlide = this.activePrevSlide.bind(this);
     this.activeNextSlide = this.activeNextSlide.bind(this);
 
     this.onResize = debounce(this.onResize.bind(this), 200);
   }
-
 
   init() {
     this.bindEvents();
@@ -154,7 +151,6 @@ export default class SlideNav extends Slide {
     super(slide, wrapper);
     this.bindControlEvents();
   }
-
 
   addArrow(prev, next) {
     this.prevElement = document.querySelector(prev);
@@ -177,7 +173,6 @@ export default class SlideNav extends Slide {
     return control;
   }
 
-
   eventControl(item, index) {
     item.addEventListener('click', (event) => {
       event.preventDefault();
@@ -190,7 +185,6 @@ export default class SlideNav extends Slide {
     this.controlArray.forEach(item => item.classList.remove(this.activeClass));
     this.controlArray[this.index.active].classList.add(this.activeClass);
   }
-
 
   addControl(customControl) {
     this.control = document.querySelector(customControl) || this.createControl();
